@@ -1,0 +1,22 @@
+#include <GL/glut.h>
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
+    glBegin(GL_TRIANGLES); // Begin drawing triangles
+        glColor3f(1.0, 0.0, 0.0); // Set color to red
+        glVertex2f(0.0, 1.0); // Vertex 1
+        glColor3f(0.0, 1.0, 0.0); // Set color to green
+        glVertex2f(-1.0, -1.0); // Vertex 2
+        glColor3f(0.0, 0.0, 1.0); // Set color to blue
+        glVertex2f(1.0, -1.0); // Vertex 3
+    glEnd(); // End drawing triangles
+    glFlush(); // Flush OpenGL pipeline
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv); // Initialize GLUT
+    glutCreateWindow("OpenGL Colored Triangle"); // Create a window with the given title
+    glutDisplayFunc(display); // Set the display callback function
+    glutMainLoop(); // Enter the event-processing loop
+    return 0;
+}
